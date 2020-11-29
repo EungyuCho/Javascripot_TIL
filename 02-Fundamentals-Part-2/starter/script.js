@@ -164,6 +164,7 @@ const calcAverage = function (arr) {
         sum += arr[i];
     }
     return sum / arr.length;
+
 }
 
 console.log(calcAverage([2, 3, 7]));
