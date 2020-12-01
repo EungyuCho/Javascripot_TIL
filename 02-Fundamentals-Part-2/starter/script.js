@@ -1,5 +1,4 @@
-'use strict';
-
+"use strict";
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -26,26 +25,25 @@ GOOD LUCK 😀
 */
 
 const calcAverage = (...scores) => {
-    let sum = 0;
-    scores.forEach((score) => sum += score);
-    return Math.round(sum / scores.length);
-}
+  let sum = 0;
+  scores.forEach(score => (sum += score));
+  return Math.round(sum / scores.length);
+};
 
-const checkWinner = function (avgDolphins, avgKoalas) {
-    if (avgDolphins >= 2 * avgKoalas) {
-        console.log(`Dolphins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
-    } else if (avgKoalas >= 2 * avgDolphins) {
-        console.log(`Koalas win 🏆 (${avgKoalas} vs. ${avgDolphins})`);
-    } else {
-        console.log('No team wins...');
-    }
-}
+const checkWinner = function(avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win 🏆 (${avgKoalas} vs. ${avgDolphins})`);
+  } else {
+    console.log("No team wins...");
+  }
+};
 
 const scoreDolphins = calcAverage(44, 23, 71);
 const scoreKoalas = calcAverage(65, 54, 49);
 
 checkWinner(scoreDolphins, scoreKoalas);
-
 
 ///////////////////////////////////////
 // Coding Challenge #2
@@ -67,17 +65,14 @@ HINT: Remember that an array needs a value in each position, and that value can 
 GOOD LUCK 😀
 */
 
-
-
-const calcTip = function (bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
+const calcTip = function(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
 
 const bills = [125, 555, 44];
 const tips = bills.map(bill => calcTip(bill));
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, totals);
-
 
 ///////////////////////////////////////
 // Coding Challenge #3
@@ -95,34 +90,39 @@ GOOD LUCK 😀
 */
 
 const John = {
-    fullName: "John Smith",
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-        this.BMI = Math.round(this.mass / (this.height * this.height));
-    }
-}
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function() {
+    this.BMI = Math.round(this.mass / (this.height * this.height));
+  }
+};
 
 const Marks = {
-    fullName: "Mark Miller",
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-        this.BMI = Math.round(this.mass / (this.height * this.height));
-    }
-}
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function() {
+    this.BMI = Math.round(this.mass / (this.height * this.height));
+  }
+};
 
 John.calcBMI();
 Marks.calcBMI();
 
 if (John.BMI > Marks.BMI) {
-    console.log(`${John.fullName}'s BMI (${John.BMI}) is higher than ${Marks.fullName}'s (${Marks.BMI})!`);
+  console.log(
+    `${John.fullName}'s BMI (${John.BMI}) is higher than ${Marks.fullName}'s (${Marks.BMI})!`
+  );
 } else if (John.BMI === Marks.BMI) {
-    console.log(`${John.fullName}'s BMI (${John.BMI}) is same with ${Marks.fullName}'s (${Marks.BMI})!`);
+  console.log(
+    `${John.fullName}'s BMI (${John.BMI}) is same with ${Marks.fullName}'s (${Marks.BMI})!`
+  );
 } else {
-    console.log(`${Marks.fullName}'s (${Marks.BMI} is higher than ${John.fullName}'s BMI (${John.BMI})!`);
+  console.log(
+    `${Marks.fullName}'s (${Marks.BMI} is higher than ${John.fullName}'s BMI (${John.BMI})!`
+  );
 }
-
 
 ///////////////////////////////////////
 // Coding Challenge #4
@@ -145,27 +145,26 @@ HINT: Call calcTip in the loop and use the push method to add values to the tips
 
 GOOD LUCK 😀
 */
-const calcTip = function (bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
+const calcTip = function(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
 const totals = [];
 
 for (let i = 0; i < bills.length; i++) {
-    const tip = calcTip(bills[i]);
-    tips.push(tip);
-    totals.push(tip + bills[i]);
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
 }
 
-const calcAverage = function (arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum / arr.length;
-
-}
+const calcAverage = function(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
 
 console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
